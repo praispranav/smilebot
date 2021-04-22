@@ -1,4 +1,6 @@
 import React,{useState} from 'react'
+import Typography from "@material-ui/core/Typography"
+import DeleteIcon from "@material-ui/icons/Delete"
 
 function Mails(props) {
     const [Delete , setDelete] = useState(false)
@@ -11,14 +13,14 @@ function Mails(props) {
         <div style={Read} onMouseEnter={()=> setTool(true)} onMouseLeave={()=> setTool(false)}>
             <div style={{display:"flex",alignItems:"center", justifyContent:"space-between"}}>
                 <div>
-                        <h6>{props.email}</h6>
-                    <p>{props.subject}</p>
+                        <Typography>{props.email}</Typography>
+                    <Typography>{props.subject}</Typography>
                     <div style={Tool ? {display:"block", background:"rgba(0,0,0,1)", color:"white", poadding:"0.5em", paddingLeft:"0.8em", borderRadius:"3px", position:"absolute" ,width:"10em", height:"auto"}: {display:"none"}}>
-                        <p>{props.content}</p>
+                        <Typography variant="h6"><small>{props.content}</small></Typography>
                     </div>
                 </div>
                 <div>
-                    <button onClick={()=> setDelete(true)}>Delete</button>
+                    <button onClick={()=> setDelete(true)}><DeleteIcon /></button>
                 </div>
             </div>
         </div>

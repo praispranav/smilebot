@@ -1,11 +1,12 @@
 import React,{useState} from 'react'
+import Typography from "@material-ui/core/Typography"
 
 function MailBody(props) {
     return (
         <div>
-            <h1>{props.email}</h1>
-            <h4>{props.subject}</h4>
-            <p>{props.content}</p>
+            <Typography variant="h5">{props.email}</Typography>
+            <Typography variant="h6"><small>{props.subject}</small></Typography>
+            <Typography variant="h5">{props.content}</Typography>
         </div>
     )
 }

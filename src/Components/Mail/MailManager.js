@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Inbox from '../data/inbox'
 import Mails from "./Mails"
 import MailBody from "./MailBody"
+import Button from "@material-ui/core/Button"
 
 class MailManager extends Component {
     constructor(props) {
@@ -50,9 +51,9 @@ class MailManager extends Component {
             <div style={Display}>
                 <button onClick={()=> this.setState({...this.state,isFilterOpen: !this.state.isFilterOpen})}>Filter</button>
                     <div style={FilterOpen}>
-                        <button onClick={()=> this.setState({...this.state,filterBy : true})}>Unread</button>
-                        <button onClick={()=> this.setState({...this.state,filterBy : false})}>Read</button>
-                        <button onClick={()=> this.setState({...this.state,filterBy: null})}>All</button>
+                        <Button onClick={()=> this.setState({...this.state,filterBy : true})}>Unread</Button>
+                        <Button onClick={()=> this.setState({...this.state,filterBy : false})}>Read</Button>
+                        <Button onClick={()=> this.setState({...this.state,filterBy: null})}>All</Button>
                     </div>
                 <div style={{display:"flex"}}>
                     <div style={{width:"30vw"}}>
